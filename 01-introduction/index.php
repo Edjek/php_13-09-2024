@@ -252,6 +252,19 @@
         Ecrire un algorithme permettant de déterminer dans combien d’années la population de la ville Agadir dépassera celle de la ville Marrakech.
     */
 
+    $populationMarrakech = 1000000;
+    $populationAgadir = 500000;
+    $i = 0;
+
+    while ($populationAgadir < $populationMarrakech) {
+        $populationMarrakech = $populationMarrakech + 50000;
+        $populationAgadir = $populationAgadir + ($populationAgadir * 0.08);
+        $i++;
+    }
+
+    echo "<p>Il faudra $i années pour que la population d'Agadir dépasse celle de Marrakech</p>";
+
+
 
     /* --------------------------------- */
     echo '<h3>Boucle for()</h3>';
@@ -260,7 +273,6 @@
     for ($i = 0; $i < count($animals); $i++) {
         echo  "L'animal : $animals[$i] <br>";
     }
-
 
     /* --------------------------------- */
     echo '<h3>Boucle foreach()</h3>';
@@ -275,7 +287,53 @@
         // echo $key .': ' .$value .'<br>';
     }
 
+    /* --------------------------------- */
+    echo '<h2>Les structures conditionnelles (if / elseif/ else</h2>';
+    /* --------------------------------- */
+
+    $a = 23;
+    $b = 5;
+    $c = 2;
+
+    // if() : permet de tester une condition. Si la condition est vraie, on execute le code à l'intérieur des accolades.
+    // '' = false
+    // null = false
+    // '0' = false
+    // '1' = true
+    if ($a < $b) {
+        echo "$a est superieur à $b";
+    } elseif ($a == $b) {
+        echo "$a est égal à $b";
+    } else {
+        echo 'si aucune condition est rempli le else sera executé <br>';
+    }
+
+    // Ecriture alternative :
+    if ($a < $b) :
+        echo "$a est superieur à $b";
+    elseif ($a == $b) :
+        echo "$a est égal à $b";
+    else :
+        echo 'si aucune condition est rempli le else sera executé <br>';
+    endif;
+
+    // L'opérateur AND écrit && permet de vérifier que 2 conditions soient réalisées en même temps.
+    if ($a > $b && $b > $c) {
+        echo 'Ok pour les 2 conditions <br>';
+    }
+
+    // L'opérateur OR écrit || permet de vérifier qu'au moins l'une des 2 conditions soit réalisée.
+    if (($a === 9 || $b > $c) && $a > $b) {
+        echo 'Ok, pour au moins une des 2 conditions <br>';
+    }
+
+    // Ecrire un algorithme qui demande à l'utilisateur son age. Il indique ensuite à l'utilisateur quel film il peut aller voir.
+    // "Action Man" si moins de 13 ans
+    // "Matrix" si il a entre 13 et 18 ans
+    // "Evil Dead" si plus de 18 ans
+
     ?>
+
 </body>
 
 </html>
