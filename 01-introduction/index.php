@@ -242,7 +242,7 @@
     $i = 0;
 
     while ($i < count($animals)) {
-        echo 'salut';
+        echo $animals[$i];
         $i++;
     }
 
@@ -263,7 +263,6 @@
     }
 
     echo "<p>Il faudra $i années pour que la population d'Agadir dépasse celle de Marrakech</p>";
-
 
 
     /* --------------------------------- */
@@ -332,7 +331,106 @@
     // "Matrix" si il a entre 13 et 18 ans
     // "Evil Dead" si plus de 18 ans
 
+    $age = 10;
+
+    if ($age < 13) {
+        echo 'Action Man';
+    }
+
+    if ($age >= 13 && $age <= 18) {
+        echo 'Matrix';
+    }
+
+    if ($age > 18) {
+        echo 'Evil Dead';
+    }
+
+    /* --------------------------------- */
+    echo '<h2>Les fonctions</h2>';
+    /* --------------------------------- */
+
+    /* --------------------------------- */
+    echo '<h3>Les fonctions utilisateurs</h3>';
+    /* --------------------------------- */
+
+    //  On déclare une fonction avec le mot clé function suivi du la fonction puis d'une paire de ()
+    function hello()
+    {
+        echo 'Hello, world!<br>';
+    }
+
+    // Pour executer une fonction, on l'appelle par son nom suivi d'une paire de ()
+    hello();
+
+    // Fonction avec parametre
+    function helloYou($name)
+    {
+        echo "$name bonjour, $name <br>";
+    }
+
+    helloYou('rachid');
+
+    function addition($x, $y)
+    {
+        echo $x / $y * $x;
+    }
+
+    addition(122, 76768);
+
+    function debbug($param)
+    {
+        echo '<pre>';
+        var_dump($param);
+        echo '</pre>';
+    }
+
+    debbug($animals);
+    debbug($country);
+
+    // Fonction avec parametre et return
+    function calculDeLaNAsa($a)
+    {
+        $essence = 77676;
+        $res = $essence * $a;
+
+        return $res;
+    }
+
+    $x = calculDeLaNAsa(123);
+
+    function displayMovieBasedOnAge($age)
+    {
+        if ($age < 13) {
+            echo 'Action Man';
+        }
+
+        if ($age >= 13 && $age <= 18) {
+            echo 'Matrix';
+        }
+
+        if ($age > 18) {
+            echo 'Evil Dead';
+        }
+    }
+
+    $rachid = 41;
+    displayMovieBasedOnAge($rachid);
+
+
+    /* --------------------------------- */
+    echo '<h3>Les fonctions prédéfinies</h3>';
+    /* --------------------------------- */
+
+    $message = " 1969. Après avoir passé plus de dix ans à enseigner au Hunter College de New York, l'estimé docteur Jones, professeur d'archéologie, est sur le point de prendre sa retraite et de couler des jours paisibles. Tout bascule après la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indy des années auparavant : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles. En arnaqueuse accomplie, Helena vole l’objet et quitte précipitamment le pays afin de le vendre au plus offrant. Indy n'a d'autre choix que de se lancer à sa poursuite. ";
+
+    // Mettre la chaine de caractère en majuscule
+    // Mettre la chaine de caractère en minuscule
+    // extraire 100 premier caractere suivi de ...
+    // Supprimez les espaces au début et à la fin de la chaine de caractère
+    // Remplacez une chaine de caractère par une autre (remplacer sa filleule par la voleuse )
+    
     ?>
+
 
 </body>
 
