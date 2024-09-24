@@ -424,11 +424,61 @@
     $message = " 1969. Après avoir passé plus de dix ans à enseigner au Hunter College de New York, l'estimé docteur Jones, professeur d'archéologie, est sur le point de prendre sa retraite et de couler des jours paisibles. Tout bascule après la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indy des années auparavant : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles. En arnaqueuse accomplie, Helena vole l’objet et quitte précipitamment le pays afin de le vendre au plus offrant. Indy n'a d'autre choix que de se lancer à sa poursuite. ";
 
     // Mettre la chaine de caractère en majuscule
+    $newMessage = mb_strtoupper($message);
+    // echo $newMessage;
+
     // Mettre la chaine de caractère en minuscule
+    // echo mb_strtolower($newMessage);
+
     // extraire 100 premier caractere suivi de ...
+    $messageSubstr = mb_substr($message, 0, 100) . '...';
+    echo $messageSubstr;
+
     // Supprimez les espaces au début et à la fin de la chaine de caractère
+    echo strlen($message);
+    $message = trim($message);
+    echo strlen($message);
+
     // Remplacez une chaine de caractère par une autre (remplacer sa filleule par la voleuse )
+    echo str_replace('sa filleule', 'la voleuse', $message);
+
+    /* --------------------------------- */
+    echo '<h3>Les super Globals</h3>';
+    /* --------------------------------- */
+
+    // Les superglobales sont des variables de type ARRAY (tableau associatif) qui sont disponibles dans tous les contextes du script.
+
+
+    /* --------------------------------- */
+    echo '<h3>$GLOBALS</h3>';
+    /* --------------------------------- */
+
+    // $GLOBALS : Contient l'ensemble des variables globales du script
+    // debbug($GLOBALS);
+    echo $GLOBALS['message'];
+
+    /* --------------------------------- */
+    echo '<h3>$_SERVER</h3>';
+    /* --------------------------------- */
+
+    debbug($_SERVER);
+
+    // AFFICHER Adresse IP du server
+    echo $_SERVER['REMOTE_ADDR'];
+
+    // AFFICHER Nom du fichier executé
+    echo $_SERVER['SCRIPT_NAME'];
+
+    // AFFICHER Chemin du fichier executé
+    echo $_SERVER['SCRIPT_FILENAME'];
     
+
+    /* --------------------------------- */
+    echo '<h3>$_GET[]</h3>';
+    /* --------------------------------- */
+
+    // $_GET est une superglobale qui permet de récupérer des informations envoyées en paramètre dans l'URL
+
     ?>
 
 
