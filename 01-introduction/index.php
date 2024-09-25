@@ -493,14 +493,42 @@
 
     // require 'inclus.php'; // Le fichier est obligatoire pour le fonctionnement du site. Si le fichier n'est pas trouvé, require génère une erreur fatale et stoppe l'exécution du code.
     // include 'inclus.php'; // Le fichier est facultatif pour le fonctionnement du site. Si le fichier n'est pas trouvé, include génère une erreur de type warning et poursuit l'exécution du code.
-    include './include.inc.php';
-    require './include.inc.php';
+    // include './include.inc.php';
+    // require './include.inc.php';
 
     // Le _once permet de vérifier si le fichier a déjà été inclus. Si c'est le cas, il ne le ré-inclut pas.
-    include_once './include.inc.php';
-    require_once './include.inc.php';
-    echo $doranco;
+    // include_once './include.inc.php';
+    // require_once './include.inc.php';
+    // echo $doranco;
 
+    /* --------------------------------- */
+    echo '<h2>Les objets</h2>';
+    /* --------------------------------- */
+
+    // Un objet est un autre type de données.
+    // Il représente un objet réel (par exemple : un produit, un personnage, un panier d'achat, etc.).
+    // Un objet est déclaré à partir d'un plan de construction : la classe. La classe est un plan général de l'objet.
+    // L'objet est instancié à partir de la classe. Chaque objet est différent, mais ils ont tous la même structure (les mêmes propriétés et les mêmes méthodes).
+
+    class Hero {
+        public $pseudo;
+        public $vie = 100;
+
+        function hello(){
+
+        }
+
+    }
+
+    $volverine = new Hero();
+    
+    $volverine->pseudo = 'Volverine';
+    echo $volverine->vie;
+    echo $volverine->pseudo;
+    $volverine->hello();
+
+    $hulk = new Hero();
+$hulk->pseudo ='Hulk';
     ?>
 
 
