@@ -1,5 +1,6 @@
 <?php
 $pdo = new PDO('mysql:host=localhost;dbname=library_db', 'root', '');
+
 $stmt = $pdo->query('SELECT * FROM book');
 $books = $stmt->fetchAll();
 ?>
@@ -22,7 +23,7 @@ $books = $stmt->fetchAll();
             <?php
             foreach ($books as $book) {
             ?>
-                <ùdiv class="card">
+                <div class="card">
                     <h2 class="title"><?= htmlspecialchars($book['titre']); ?></h2>
                     <p><?= htmlspecialchars($book['description']); ?></p>
                     <!-- Je veux que mon lien cliquable -->
@@ -30,9 +31,9 @@ $books = $stmt->fetchAll();
                     <!-- passer en parametre de la route l'id du livre -->
                     <!-- Sur la page detail afficher l'id du livre -->
                     <!-- Refaire une requete pour recuperer toutes les informations du livre dont on a l'id -->
-                    <a href="details.php?test=">Voir le livre</a>
-                </ùùdiv>
-            <?phpù
+                    <a href="details.php?id=<?= htmlspecialchars($book['id']); ?>">Voir le livre</a>
+                </div>
+            <?php
             }
             ?>
         </section>
