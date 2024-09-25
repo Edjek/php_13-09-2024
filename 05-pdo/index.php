@@ -1,11 +1,10 @@
 <?php
-    $pdo = new PDO('mysql:host=localhost;dbname=library_db', 'root','');
-    $stmt = $pdo->query('SELECT * FROM book');
-    $res = $stmt->fetchAll();
-    // echo '<pre>';
-    // var_dump($res);
-    // echo '</pre>';
+$pdo = new PDO('mysql:host=localhost;dbname=library_db', 'root', '');
+$stmt = $pdo->query('SELECT * FROM book');
+$books = $stmt->fetchAll();
+
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -20,12 +19,17 @@
     <main>
         <h1>Library</h1>
         <section>
-            <!-- afficher tous les livres -->
-                <div>
-                    <h2></h2>
-                    <p></p>
-                    <p></p>
+            <?php
+            foreach ($books as $book) {
+            ?>
+                <div class="card">
+                    <h2 class="title"><?= $book['titre']; ?></h2>
+                    <p><?= $book['description']; ?></p>
+                    <a href="details.php">Voir le livre</a>
                 </div>
+            <?php
+            }
+            ?>
         </section>
 
     </main>
