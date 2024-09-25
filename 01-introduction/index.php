@@ -461,23 +461,45 @@
     echo '<h3>$_SERVER</h3>';
     /* --------------------------------- */
 
+    // $_SERVER  : Contient des informations liées au serveur
     debbug($_SERVER);
+    echo $_SERVER['MYSQL_HOME'];
 
-    // AFFICHER Adresse IP du server
-    echo $_SERVER['REMOTE_ADDR'];
+    echo "Adresse IP du server : " . $_SERVER['SERVER_NAME'] . '<br>';
+    echo "Nom du fichier executé : " . $_SERVER['SCRIPT_NAME'] . '<br>';
+    echo "Chemin du fichier executé : " . $_SERVER['SCRIPT_FILENAME'] . '<br>';
 
-    // AFFICHER Nom du fichier executé
-    echo $_SERVER['SCRIPT_NAME'];
-
-    // AFFICHER Chemin du fichier executé
-    echo $_SERVER['SCRIPT_FILENAME'];
-    
 
     /* --------------------------------- */
     echo '<h3>$_GET[]</h3>';
     /* --------------------------------- */
 
     // $_GET est une superglobale qui permet de récupérer des informations envoyées en paramètre dans l'URL
+    var_dump($_GET);
+
+
+    /* --------------------------------- */
+    echo '<h3>$_POST[]</h3>';
+    /* --------------------------------- */
+
+    // $_POST est une superglobale qui permet de récupérer des informations envoyées en paramètre dans le corps de la requête HTTP
+    var_dump($_POST);
+
+    /* --------------------------------- */
+    echo '<h2>Les inclusions de fichier</h2>';
+    /* --------------------------------- */
+
+    // En PHP, il est possible d'inclure des fichiers dans d'autres fichiers avec l'instruction require, include, include_once ou encore require_once (on utilise plutôt require_once en pratique).
+
+    // require 'inclus.php'; // Le fichier est obligatoire pour le fonctionnement du site. Si le fichier n'est pas trouvé, require génère une erreur fatale et stoppe l'exécution du code.
+    // include 'inclus.php'; // Le fichier est facultatif pour le fonctionnement du site. Si le fichier n'est pas trouvé, include génère une erreur de type warning et poursuit l'exécution du code.
+    include './include.inc.php';
+    require './include.inc.php';
+
+    // Le _once permet de vérifier si le fichier a déjà été inclus. Si c'est le cas, il ne le ré-inclut pas.
+    include_once './include.inc.php';
+    require_once './include.inc.php';
+    echo $doranco;
 
     ?>
 
