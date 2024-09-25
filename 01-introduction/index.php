@@ -58,6 +58,7 @@
     /* --------------------------------- */
 
     // Les types de variables :
+    // La fonction gettype() permet de connaitre le type d'une variable
 
     // String : chaine de caractères (texte)
     $unMessage = 'Salut, l\'equipe. Je suis un message dans une variable';
@@ -84,6 +85,21 @@
     $uneVariable = null;
     echo gettype($uneVariable) . '<br>';
     echo $uneVariable . '<br>';
+
+
+    /* --------------------------------- */
+    echo '<h2>Debbug</h2>';
+    /* --------------------------------- */
+
+    // La fonction var_dump() permet d'afficher le type et le contenu d'une variable
+    echo '<pre>';
+    var_dump($unMessage);
+    echo '</pre>';
+
+    // La fonction print_r() permet d'afficher le contenu d'une variable
+    echo '<pre>';
+    print_r($unMessage);
+    echo '</pre>';
 
 
     /* --------------------------------- */
@@ -139,6 +155,7 @@
     /* --------------------------------- */
     echo '<h3>Les constantes magiques</h3>';
     /* --------------------------------- */
+
     // Les constantes magiques sont des constantes prédéfinies dans le langage qui changent de valeur en fonction du contexte
     echo 'Chemin du fichier courant : ' . __FILE__ . '<br>'; // Affiche le chemin complet vers le fichier courant
     echo 'Numero de la ligne de code : ' . __LINE__ . '<br>'; // Affiche le numéro de la ligne courante
@@ -157,6 +174,8 @@
     // Ces valeurs peuvent être de n'importe quel type et possèdent un indice par défaut dont la numérotation commence à 0.
 
     $country = ['France', 'Italie', 'Espagne', 'Portugal'];
+
+    // On peut déclarer un tableau de données de la manière suivante également :
     $country = array('France', 'Italie', 'Espagne', 'Portugal');
 
     echo gettype($country) . '<br>';
@@ -176,18 +195,23 @@
     echo '<h3>Les tableaux associatifs</h3>';
     /* --------------------------------- */
 
-    $tableau2 = ['nom' => 'rachid', 'prenom' => 'edjek'];
-    echo $tableau2['nom'] . '<br>';
-
-    $user = ['firstName' => 'rachid', 'lastName' => 'edjekouane', 'age' => 41, 'phone' => '0165878974'];
+    // Un tableau associatif est un tableau dans lequel on associe une clé à une valeur.
+    // La clé est une chaine de caractères qui permet d'accéder à la valeur associée.
+    $user = [
+        'firstName' => 'rachid',
+        'lastName' => 'edjekouane',
+        'age' => 41,
+        'phone' => '0165878974'
+    ];
 
     echo "Bonjour, je m'appelle {$user['firstName']} {$user['lastName']}, j'ai {$user['age']} ans et mon numéro de téléphone est le : {$user['phone']} <br>";
 
-    $animals = ['chien', 'chat', 'lapin', 'poule', 'aigle'];
 
     /* --------------------------------- */
     echo '<h3>La fonction implode()</h3>';
     /* --------------------------------- */
+
+    $animals = ['chien', 'chat', 'lapin', 'poule', 'aigle'];
 
     // implode() permet de transformer un tableau en chaine de caractères.
     echo 'Mes animaux préférés sont : ' . implode(', ', $animals) . '<br>';
@@ -346,11 +370,11 @@
     }
 
     /* --------------------------------- */
-    echo '<h2>Les fonctions</h2>';
+    echo '<h2>Fonctions</h2>';
     /* --------------------------------- */
 
     /* --------------------------------- */
-    echo '<h3>Les fonctions utilisateurs</h3>';
+    echo '<h3>Fonctions utilisateurs</h3>';
     /* --------------------------------- */
 
     //  On déclare une fonction avec le mot clé function suivi du la fonction puis d'une paire de ()
@@ -421,6 +445,9 @@
     echo '<h3>Les fonctions prédéfinies</h3>';
     /* --------------------------------- */
 
+    // Les fonctions prédéfinies sont des fonctions qui sont déjà intégrées dans le langage PHP.
+    // Il existe des centaines de fonctions prédéfinies en PHP.
+
     $message = " 1969. Après avoir passé plus de dix ans à enseigner au Hunter College de New York, l'estimé docteur Jones, professeur d'archéologie, est sur le point de prendre sa retraite et de couler des jours paisibles. Tout bascule après la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indy des années auparavant : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles. En arnaqueuse accomplie, Helena vole l’objet et quitte précipitamment le pays afin de le vendre au plus offrant. Indy n'a d'autre choix que de se lancer à sa poursuite. ";
 
     // Mettre la chaine de caractère en majuscule
@@ -475,7 +502,7 @@
     /* --------------------------------- */
 
     // $_GET est une superglobale qui permet de récupérer des informations envoyées en paramètre dans l'URL
-    var_dump($_GET);
+    debbug($_GET);
 
 
     /* --------------------------------- */
@@ -510,25 +537,29 @@
     // Un objet est déclaré à partir d'un plan de construction : la classe. La classe est un plan général de l'objet.
     // L'objet est instancié à partir de la classe. Chaque objet est différent, mais ils ont tous la même structure (les mêmes propriétés et les mêmes méthodes).
 
-    class Hero {
+    class Hero
+    {
         public $pseudo;
         public $vie = 100;
 
-        function hello(){
-
+        function regenerer()
+        {
+            $this->vie = 100;
         }
-
     }
 
+    // Instanciation de la classe Hero
+    // $volverine est un objet de la classe Hero
     $volverine = new Hero();
-    
+
+    // On accède aux propriétés et aux méthodes de l'objet avec la flèche ->
     $volverine->pseudo = 'Volverine';
     echo $volverine->vie;
-    echo $volverine->pseudo;
-    $volverine->hello();
+    $volverine->pseudo = $volverine->vie - 20;
+    $volverine->regenerer();
 
     $hulk = new Hero();
-$hulk->pseudo ='Hulk';
+    $hulk->pseudo = 'Hulk';
     ?>
 
 

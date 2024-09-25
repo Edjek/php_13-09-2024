@@ -1,6 +1,9 @@
 <?php
+// Connexion à la base de données
+// PDO est une extension de PHP qui définit une interface pour accéder à une base de données
 $pdo = new PDO('mysql:host=localhost;dbname=library_db', 'root', '');
 
+// Récupération des livres
 $stmt = $pdo->query('SELECT * FROM book');
 $books = $stmt->fetchAll();
 ?>
@@ -21,16 +24,15 @@ $books = $stmt->fetchAll();
         <h1>Library</h1>
         <section>
             <?php
+            // Pour chaque livre, on affiche un card avec le titre, la description et un lien vers la page details.php
+            // htmlspecialchars() permet de convertir les caractères spéciaux en entités HTML
+            // Pour éviter les failles XSS, il est important de toujours utiliser htmlspecialchars() pour afficher des données provenant de l'utilisateur
+            // Les failles XSS permettent d'injecter du code JavaScript dans une page web
             foreach ($books as $book) {
             ?>
                 <div class="card">
                     <h2 class="title"><?= htmlspecialchars($book['titre']); ?></h2>
                     <p><?= htmlspecialchars($book['description']); ?></p>
-                    <!-- Je veux que mon lien cliquable -->
-                    <!-- creer la page <detail class="php" -->
-                    <!-- passer en parametre de la route l'id du livre -->
-                    <!-- Sur la page detail afficher l'id du livre -->
-                    <!-- Refaire une requete pour recuperer toutes les informations du livre dont on a l'id -->
                     <a href="details.php?id=<?= htmlspecialchars($book['id']); ?>">Voir le livre</a>
                 </div>
             <?php

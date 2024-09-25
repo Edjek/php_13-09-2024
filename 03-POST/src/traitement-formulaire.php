@@ -1,11 +1,9 @@
 <?php
 
+// Le tableau $_POST est une superglobale qui permet de récupérer les informations passées en POST
+// Nous pouvons récupérer les informations passées en POST dans le tableau $_POST
+// Vous pouvez accéder aux informations passées en POST avec $_POST['clé']
 
-// Si Method du formulaire a bien été envoyé en POST
-// Si Les variables existent et si elles ne sont pas vides
-// on va supprimer les espaces en debut et fin de nos variables
-// ... On a reussi a sauvegarder en bdd
-// rediriger l'utilisateur vers la page accueil (index.php)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

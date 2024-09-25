@@ -8,19 +8,20 @@
 </head>
 
 <body>
-    <form action="./src/traitement-formulaire.php" method="POST">
-        <div>
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="name">
-        </div>
-
-        <div>
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password">
-        </div>
-
-        <input type="submit" value="Envoyer">
-    </form>
+    <main>
+        <h1>Formulaire</h1>
+        <form action="./src/traitement-formulaire.php" method="POST">
+            <div>
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <input type="submit" value="Envoyer">
+        </form>
+    </main>
 </body>
 
 </html>

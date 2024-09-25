@@ -1,7 +1,6 @@
 <?php
 $title = 'ACCUEIL';
-include_once './include/hefrader.php';
-
+include_once './include/header.php';
 ?>
 
 <main>
