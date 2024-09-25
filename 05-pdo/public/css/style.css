@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Styles pour le header et le footer */
+header,
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Titre principal */
+main h1 {
+    text-align: center;
+    color: #3498db;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+/* Mise en page de la section contenant les livres */
+main section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styles pour les cartes des livres */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Effet au survol des cartes */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre du livre */
+.card .title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Description du livre */
+.card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    text-align: justify;
+}
+
+/* Lien vers la page de détail */
+.card a {
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Effet au survol du lien */
+.card a:hover {
+    background-color: #2980b9;
+}
+
+/* Style responsive pour petits écrans */
+@media (max-width: 600px) {
+    main section {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
