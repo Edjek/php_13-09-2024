@@ -39,9 +39,9 @@ $books = $stmt->fetchAll();
             foreach ($books as $book) {
             ?>
                 <div class="card">
-                    <h2 class="title"><?= htmlspecialchars($book['titre']); ?></h2>
-                    <p><?= htmlspecialchars($book['description']); ?></p>
-                    <a href="./template/details.php? <?= htmlspecialchars($book['id']); ?>">Voir le livre</a>
+                    <h2 class="title"><?= htmlspecialchars($book['title']); ?></h2>
+
+                    <a href="./template/details.php?id=<?= htmlspecialchars($book['id']); ?>">Voir le livre</a>
                 </div>
             <?php
             }
