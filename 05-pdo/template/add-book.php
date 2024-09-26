@@ -7,7 +7,6 @@
     <title>Ajouter un auteur</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/form.css">
-
 </head>
 
 <body>
@@ -19,10 +18,19 @@
         </nav>
     </header>
     <main>
-        <form action="../src/form/author-form.php" method="POST">
+        <form action="../src/form/book-form.php" method="POST">
             <div>
-                <label for="name">Nom de l'author</label>
-                <input type="text" name="author" id="name">
+                <label for="title">Nom du livre</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div>
+                <label for="year">Année de sortie</label>
+                <input type="number" name="year" id="year" min="0000" max="3000">
+            </div>
+            <div>
+                <label for="isbn">Isbn</label>
+                <input type="text" name="isbn" id="isbn">
+                <small>Format: 13 chiffres</small>
             </div>
 
             <input type="submit" value="Envoyer">
