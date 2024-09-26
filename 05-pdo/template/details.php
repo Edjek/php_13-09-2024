@@ -23,6 +23,11 @@ $book = $stmt->fetch();
 </head>
 
 <body>
+    <header>
+        <nav>
+            <a href="">ajouter un auteur</a>
+        </nav>
+    </header>
     <h1><?= $book['titre']; ?></h1>
 </body>
 

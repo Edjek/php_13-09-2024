@@ -23,7 +23,11 @@ $books = $stmt->fetchAll();
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <nav>
+            <a href="">ajouter un auteur</a>
+        </nav>
+    </header>
     <main>
         <h1>Library</h1>
         <section>
