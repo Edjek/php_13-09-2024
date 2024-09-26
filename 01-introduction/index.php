@@ -227,7 +227,7 @@
     // Les opérateurs logiques (&&, ||, !, and, or, xor)
     // Les opérateurs d'incrémentation et de décrémentation (++, --)
 
-    // Les opérateurs de strucutre (if, else, elseif, switch, case, default, for, foreach, while, do while, break, continue, return, include, require, include_once, require_once)
+    // Les opérateurs de structure (if, else, elseif, switch, case, default, for, foreach, while, do while, break, continue, return, include, require, include_once, require_once)
     // Les structures conditionnelles (if / elseif/ else)
     // Les structures itératives : les boucles (while, for, foreach, do while)
     // Les structures de langage (break, continue, return, include, require, include_once, require_once)
@@ -420,25 +420,25 @@
         return $res;
     }
 
-    $x = calculDeLaNAsa(123);
+    $res = calculDeLaNAsa(123);
 
     function displayMovieBasedOnAge($age)
     {
         if ($age < 13) {
-            echo 'Action Man';
+            return 'Action Man';
         }
 
         if ($age >= 13 && $age <= 18) {
-            echo 'Matrix';
+            return 'Matrix';
         }
 
         if ($age > 18) {
-            echo 'Evil Dead';
+            return 'Evil Dead';
         }
     }
 
     $rachid = 41;
-    displayMovieBasedOnAge($rachid);
+    $shjgfdhj = displayMovieBasedOnAge($rachid);
 
 
     /* --------------------------------- */

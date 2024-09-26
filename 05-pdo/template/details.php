@@ -1,11 +1,13 @@
 <?php
+
 $id =  $_GET['id'];
 
-$pdo = new PDO('mysql:host=localhost;dbname=library_db', 'root', '');
+include_once '../src/db.php';
 
 // Pour éviter les injections SQL, on utilise une requête préparée
 // Les requêtes préparées permettent de séparer les instructions SQL et les données
 // Les injections SQL permettent d'injecter du code SQL dans un formulaire, il s'agit d'une faille de sécurité
+$pdo = getPDO();
 $stmt = $pdo->prepare('SELECT * FROM book WHERE id=:id');
 $stmt->bindParam(':id', $id);
 $stmt->execute();

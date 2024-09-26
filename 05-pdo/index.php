@@ -1,9 +1,13 @@
 <?php
 // Connexion à la base de données
 // PDO est une extension de PHP qui définit une interface pour accéder à une base de données
-$pdo = new PDO('mysql:host=localhost;dbname=library_db', 'root', '');
+
+include_once './src/db.php';
+$pdo = getPDO();
 
 // Récupération des livres
+
+// initialiser la valeur de $pdo en appelant la fonction
 $stmt = $pdo->query('SELECT * FROM book');
 $books = $stmt->fetchAll();
 ?>
@@ -33,7 +37,7 @@ $books = $stmt->fetchAll();
                 <div class="card">
                     <h2 class="title"><?= htmlspecialchars($book['titre']); ?></h2>
                     <p><?= htmlspecialchars($book['description']); ?></p>
-                    <a href="details.php?id=<?= htmlspecialchars($book['id']); ?>">Voir le livre</a>
+                    <a href="./template/details.php? <?= htmlspecialchars($book['id']); ?>">Voir le livre</a>
                 </div>
             <?php
             }
