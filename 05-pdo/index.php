@@ -3,6 +3,7 @@
 // PDO est une extension de PHP qui définit une interface pour accéder à une base de données
 
 include_once './src/db.php';
+session_start();
 $pdo = getPDO();
 
 // Récupération des livres
@@ -25,10 +26,17 @@ $books = $stmt->fetchAll();
 <body>
     <header>
         <nav>
-            <a href="">ajouter un auteur</a>
+            <a href="./template/add-author.php">ajouter un auteur</a>
         </nav>
     </header>
     <main>
+
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
+        ?>
         <h1>Library</h1>
         <section>
             <?php
