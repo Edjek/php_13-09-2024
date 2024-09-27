@@ -1,3 +1,14 @@
+<?php
+
+include_once '../src/db.php';
+
+$pdo = getPDO();
+$stmt = $pdo->prepare('SELECT * FROM author');
+
+$stmt->execute();
+$authors = $stmt->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,7 +43,19 @@
                 <input type="text" name="isbn" id="isbn">
                 <small>Format: 13 chiffres</small>
             </div>
+            <div>
+                <label for="author">Auteur</label>
+                <select name="author">
+                    <?php
+                    foreach ($authors as $author) {
+                    ?>
+                    <option value="<?= $author['id']; ?>"><?= $author['author_name'] ?></option>
 
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
             <input type="submit" value="Envoyer">
         </form>
     </main>
