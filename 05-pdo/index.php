@@ -2,11 +2,9 @@
 
 include_once './src/db.php';
 session_start();
+
 $pdo = getPDO();
 
-// Récupération des livres
-
-// initialiser la valeur de $pdo en appelant la fonction
 $stmt = $pdo->query('SELECT * FROM book');
 $books = $stmt->fetchAll();
 ?>
@@ -27,6 +25,7 @@ $books = $stmt->fetchAll();
         <nav>
             <a href="./template/add-author.php">ajouter un auteur</a>
             <a href="./template/add-book.php">ajouter un livre</a>
+            <a href="./template/add-user.php">inscription</a>
         </nav>
     </header>
     <main>

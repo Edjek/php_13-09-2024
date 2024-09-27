@@ -7,7 +7,6 @@
     <title>Ajouter un auteur</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/form.css">
-
 </head>
 
 <body>

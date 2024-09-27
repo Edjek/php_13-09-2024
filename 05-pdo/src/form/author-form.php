@@ -1,6 +1,7 @@
 <?php
 
 include_once '../db.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['author']) && !empty($_POST['author'])) {
@@ -12,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':pull', $author);
         $stmt->execute();
 
-        session_start();
         $_SESSION['message'] = 'Un nouvel auteur a bien été ajouté';
 
         header('Location:../../index.php');
