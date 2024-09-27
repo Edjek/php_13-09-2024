@@ -1,10 +1,11 @@
 <?php
 
 include_once '../src/db.php';
+session_start();
 
 $pdo = getPDO();
-$stmt = $pdo->prepare('SELECT * FROM author');
 
+$stmt = $pdo->prepare('SELECT * FROM author');
 $stmt->execute();
 $authors = $stmt->fetchAll();
 ?>
@@ -29,10 +30,16 @@ $authors = $stmt->fetchAll();
         </nav>
     </header>
     <main>
+        <?php
+        if(isset($_SESSION['message'])){
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
+        ?>
         <form action="../src/form/book-form.php" method="POST">
             <div>
                 <label for="title">Nom du livre</label>
-                <input type="text" name="title" id="title" required>
+                <input type="text" name="title" id="title">
             </div>
             <div>
                 <label for="year">Année de sortie</label>
@@ -49,8 +56,7 @@ $authors = $stmt->fetchAll();
                     <?php
                     foreach ($authors as $author) {
                     ?>
-                    <option value="<?= $author['id']; ?>"><?= $author['author_name'] ?></option>
-
+                        <option value="<?= $author['id']; ?>"><?= $author['author_name'] ?></option>
                     <?php
                     }
                     ?>
