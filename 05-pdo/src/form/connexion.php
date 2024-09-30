@@ -47,5 +47,6 @@ if (!password_verify($pswd, $user['password'])) {
 $_SESSION['user_status'] = $user['status'];
 $_SESSION['isLogged'] = true;
 $_SESSION['message'] = 'Vous êtes connecté';
+
 header('Location:../../index.php');
 exit;

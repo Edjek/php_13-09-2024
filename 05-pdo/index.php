@@ -23,14 +23,30 @@ $books = $stmt->fetchAll();
     <header>
         <a href="">Accueil</a>
         <nav>
-            <a href="./template/add-author.php">ajouter un auteur</a>
-            <a href="./template/add-book.php">ajouter un livre</a>
+            <?php
+            if (isset($_SESSION['user_status']) && $_SESSION['user_status'] == 1) {
+            ?>
+                <a href="./template/add-author.php">ajouter un auteur</a>
+                <a href="./template/add-book.php">ajouter un livre</a>
+            <?php
+            }
+            ?>
 
-            <!-- si user islogged -->
-            <a href="./template/add-user.php">inscription</a>
-            <a href="./template/connexion.php">connexion</a>
-            <!-- sinon -->
-            <a href="">deconnexion</a>
+            <?php
+            if (
+                isset($_SESSION['isLogged']) && $_SESSION['isLogged'] === true
+            ) {
+            ?>
+                <a href="./src/deconnexion.php">deconnexion</a>
+            <?php
+            } else {
+            ?>
+                <a href="./template/add-user.php">inscription</a>
+                <a href="./template/connexion.php">connexion</a>
+            <?php
+            }
+            ?>
+
         </nav>
     </header>
     <main>

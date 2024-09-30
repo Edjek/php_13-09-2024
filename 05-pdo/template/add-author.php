@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if ($_SESSION['user_status'] == false) {
+    header('Location:../index.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
