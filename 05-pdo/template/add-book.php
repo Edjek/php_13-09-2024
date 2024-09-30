@@ -23,15 +23,17 @@ $authors = $stmt->fetchAll();
 
 <body>
     <header>
-        <a href="../index.php">Accueil</a>
+        <a href="">Accueil</a>
         <nav>
             <a href="add-author.php">ajouter un auteur</a>
             <a href="add-book.php">ajouter un livre</a>
+            <a href="add-user.php">inscription</a>
+            <a href="connexion.php">connexion</a>
         </nav>
     </header>
     <main>
         <?php
-        if(isset($_SESSION['message'])){
+        if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
             unset($_SESSION['message']);
         }

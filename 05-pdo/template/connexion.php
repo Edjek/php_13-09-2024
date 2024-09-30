@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/form.css">
 </head>
@@ -31,7 +31,7 @@ session_start();
             unset($_SESSION['message']);
         }
         ?>
-        <form action="../src/form/user-form.php" method="POST">
+        <form action="../src/form/connexion.php" method="POST">
             <div>
                 <label for="name">Pseudo</label>
                 <input type="text" id="name" name="name">
@@ -41,7 +41,7 @@ session_start();
                 <input type="password" id="pswd" name="pswd">
             </div>
 
-            <input type="submit" value="Inscription">
+            <input type="submit" value="Connexion">
         </form>
     </main>
 </body>

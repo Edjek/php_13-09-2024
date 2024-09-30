@@ -25,7 +25,12 @@ $books = $stmt->fetchAll();
         <nav>
             <a href="./template/add-author.php">ajouter un auteur</a>
             <a href="./template/add-book.php">ajouter un livre</a>
+
+            <!-- si user islogged -->
             <a href="./template/add-user.php">inscription</a>
+            <a href="./template/connexion.php">connexion</a>
+            <!-- sinon -->
+            <a href="">deconnexion</a>
         </nav>
     </header>
     <main>

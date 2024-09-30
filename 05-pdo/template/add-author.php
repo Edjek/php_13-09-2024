@@ -11,10 +11,12 @@
 
 <body>
     <header>
-        <a href="../index.php">Accueil</a>
+        <a href="">Accueil</a>
         <nav>
             <a href="add-author.php">ajouter un auteur</a>
             <a href="add-book.php">ajouter un livre</a>
+            <a href="add-user.php">inscription</a>
+            <a href="connexion.php">connexion</a>
         </nav>
     </header>
     <main>
